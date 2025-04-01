@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcnfdna2vd3ce"]
+
+[ext_resource type="Script" uid="uid://51hewudmb00c" path="res://addons/game_manager/character/game_character_editor.gd" id="1_kjp28"]
+[ext_resource type="PackedScene" uid="uid://63arjodw3br1" path="res://components/back_button.tscn" id="2_uhnaq"]
+
+[node name="GameCharacterEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kjp28")
+
+[node name="BackButton" parent="." instance=ExtResource("2_uhnaq")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 36.0
+offset_right = 106.0
+offset_bottom = 67.0
+
+[node name="CharacterForm" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -145.0
+offset_right = 250.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameInput" type="LineEdit" parent="CharacterForm"]
+layout_mode = 2
+placeholder_text = "Enter a name..."
+
+[node name="DescriptionInput" type="TextEdit" parent="CharacterForm"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+placeholder_text = "Enter a description..."
+
+[node name="PowerInput" type="SpinBox" parent="CharacterForm"]
+layout_mode = 2
+
+[node name="TagsInput" type="LineEdit" parent="CharacterForm"]
+layout_mode = 2
+placeholder_text = "Enter a tag..."
+
+[node name="ButtonGroup" type="HBoxContainer" parent="CharacterForm"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="CharacterForm/ButtonGroup"]
+layout_mode = 2
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="CharacterForm/ButtonGroup"]
+layout_mode = 2
+text = "Load"
